@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+  <div class="container">
+    <h1>Cocktails List!</h1>
+    <p>Find the best cocktails and create your own !</p>
+    <%= link_to 'Create a new one', new_cocktail_path, class: "btn btn-flat"  %>
+  </div>
+</div>
+
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/225236/pexels-photo-225236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+      <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+    </div>
+  <% end %>
+
+</div>
+
